@@ -1,0 +1,26 @@
+{
+  "name": "@mfe/cart",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "rspack serve",
+    "build": "rspack build",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.0.0",
+    "@mfe/event-bus": "workspace:*",
+    "@mfe/cart-api": "workspace:*",
+    "@mfe/user-api": "workspace:*"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^1.7.0",
+    "@rspack/core": "^1.7.0",
+    "@mfe/tsconfig": "workspace:*",
+    "typescript": "^5.7.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  }
+}
