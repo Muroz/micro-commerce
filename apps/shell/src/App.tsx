@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { RemoteErrorBoundary } from "./RemoteErrorBoundary";
 
 const ProductsApp = lazy(() => import("products/ProductsApp"));
 const CartApp = lazy(() => import("cart/CartApp"));
@@ -21,21 +22,48 @@ function Layout() {
           <Link to="/">Products</Link>
           <Link to="/cart">
             Cart{" "}
-            <Suspense fallback={null}>
-              <CartBadge />
-            </Suspense>
+            <RemoteErrorBoundary remote="cart" fallback={null}>
+              <Suspense fallback={null}>
+                <CartBadge />
+              </Suspense>
+            </RemoteErrorBoundary>
           </Link>
           <Link to="/checkout">Checkout</Link>
         </nav>
       </header>
       <main>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route path="/*" element={<ProductsApp />} />
-            <Route path="/cart/*" element={<CartApp />} />
-            <Route path="/checkout/*" element={<CheckoutApp />} />
-          </Routes>
-        </Suspense>
+        <Routes>
+          <Route
+            path="/*"
+            element={
+              <RemoteErrorBoundary remote="products">
+                <Suspense fallback={<div>Loading...</div>}>
+                  <ProductsApp />
+                </Suspense>
+              </RemoteErrorBoundary>
+            }
+          />
+          <Route
+            path="/cart/*"
+            element={
+              <RemoteErrorBoundary remote="cart">
+                <Suspense fallback={<div>Loading...</div>}>
+                  <CartApp />
+                </Suspense>
+              </RemoteErrorBoundary>
+            }
+          />
+          <Route
+            path="/checkout/*"
+            element={
+              <RemoteErrorBoundary remote="checkout">
+                <Suspense fallback={<div>Loading...</div>}>
+                  <CheckoutApp />
+                </Suspense>
+              </RemoteErrorBoundary>
+            }
+          />
+        </Routes>
       </main>
     </div>
   );

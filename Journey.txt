@@ -1,0 +1,8 @@
+- Picking the bundler. Went with rspark instead of webpack or vite
+- Scaffolding everything
+- Relying on a shared store and an event bus system
+- Realized that the event bus system does not work if the microfrontend with the listeners isn't mounted
+- Moved handling to the shell app
+- Realized that this creates coupling between all the microfrontends that are meant to be independent from each other
+- Looked into adoping an approach where each frontend had control over their store through a [domain]Api approach
+- Scalable and allows individual deployments of each indvidiual microfrontend without impacting the rest

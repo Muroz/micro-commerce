@@ -36,6 +36,12 @@ importers:
         specifier: ^7.0.0
         version: 7.14.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
     devDependencies:
+      '@mfe/remotes-types':
+        specifier: workspace:*
+        version: link:../../packages/remotes-types
+      '@mfe/rspack-shared':
+        specifier: workspace:*
+        version: link:../../packages/rspack-shared
       '@mfe/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
@@ -60,6 +66,9 @@ importers:
       '@mfe/cart-api':
         specifier: workspace:*
         version: link:../../packages/cart-api
+      '@mfe/checkout-api':
+        specifier: workspace:*
+        version: link:../../packages/checkout-api
       '@mfe/event-bus':
         specifier: workspace:*
         version: link:../../packages/event-bus
@@ -76,6 +85,12 @@ importers:
         specifier: ^7.0.0
         version: 7.14.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
     devDependencies:
+      '@mfe/remotes-types':
+        specifier: workspace:*
+        version: link:../../packages/remotes-types
+      '@mfe/rspack-shared':
+        specifier: workspace:*
+        version: link:../../packages/rspack-shared
       '@mfe/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
@@ -103,6 +118,9 @@ importers:
       '@mfe/event-bus':
         specifier: workspace:*
         version: link:../../packages/event-bus
+      '@mfe/products-api':
+        specifier: workspace:*
+        version: link:../../packages/products-api
       '@mfe/user-api':
         specifier: workspace:*
         version: link:../../packages/user-api
@@ -116,6 +134,12 @@ importers:
         specifier: ^7.0.0
         version: 7.14.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
     devDependencies:
+      '@mfe/remotes-types':
+        specifier: workspace:*
+        version: link:../../packages/remotes-types
+      '@mfe/rspack-shared':
+        specifier: workspace:*
+        version: link:../../packages/rspack-shared
       '@mfe/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
@@ -137,15 +161,9 @@ importers:
 
   apps/shell:
     dependencies:
-      '@mfe/cart-api':
-        specifier: workspace:*
-        version: link:../../packages/cart-api
       '@mfe/event-bus':
         specifier: workspace:*
         version: link:../../packages/event-bus
-      '@mfe/user-api':
-        specifier: workspace:*
-        version: link:../../packages/user-api
       react:
         specifier: ^19.0.0
         version: 19.2.5
@@ -156,6 +174,12 @@ importers:
         specifier: ^7.0.0
         version: 7.14.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
     devDependencies:
+      '@mfe/remotes-types':
+        specifier: workspace:*
+        version: link:../../packages/remotes-types
+      '@mfe/rspack-shared':
+        specifier: workspace:*
+        version: link:../../packages/rspack-shared
       '@mfe/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
@@ -175,7 +199,22 @@ importers:
         specifier: ^5.7.0
         version: 5.9.3
 
+  manifest: {}
+
   packages/cart-api:
+    dependencies:
+      zustand:
+        specifier: ^5.0.0
+        version: 5.0.12(@types/react@19.2.14)(react@19.2.5)
+    devDependencies:
+      '@mfe/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      typescript:
+        specifier: ^5.7.0
+        version: 5.9.3
+
+  packages/checkout-api:
     dependencies:
       zustand:
         specifier: ^5.0.0
@@ -196,6 +235,23 @@ importers:
       typescript:
         specifier: ^5.7.0
         version: 5.9.3
+
+  packages/products-api:
+    dependencies:
+      zustand:
+        specifier: ^5.0.0
+        version: 5.0.12(@types/react@19.2.14)(react@19.2.5)
+    devDependencies:
+      '@mfe/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      typescript:
+        specifier: ^5.7.0
+        version: 5.9.3
+
+  packages/remotes-types: {}
+
+  packages/rspack-shared: {}
 
   packages/tsconfig: {}
 

@@ -7,5 +7,5 @@
       "@mfe/user-api": ["../../packages/user-api/src"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "../../packages/remotes-types/index.d.ts"]
 }

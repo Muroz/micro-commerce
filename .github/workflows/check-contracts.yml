@@ -1,0 +1,30 @@
+name: Check contracts
+
+# Runs `tsc --noEmit` across all apps when any *-api package or the
+# consolidated remotes-types declarations change. Catches breaking renames
+# in a producing API before the producing app's deploy workflow ships them.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "packages/*-api/**"
+      - "packages/remotes-types/**"
+      - "apps/**/src/**"
+      - "apps/**/tsconfig.json"
+      - "tsconfig.base.json"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm turbo check-contracts

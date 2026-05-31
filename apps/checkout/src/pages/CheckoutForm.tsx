@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { cartApi } from "@mfe/cart-api";
+import { cartApi } from "cart/cartApi";
 import { eventBus, Events } from "@mfe/event-bus";
 
 export default function CheckoutForm() {

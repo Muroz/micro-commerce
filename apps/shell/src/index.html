@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Microfrontend Shell</title>
+    <!--
+      Single source of truth for remote URLs. The shell fetches this manifest
+      at runtime and pins each remote to a versioned URL. Replaced by CI per
+      environment. In local dev the placeholder triggers the localhost
+      fallback in dynamicRemote().
+    -->
+    <script>
+      window.__MFE_MANIFEST_URL__ = "__MANIFEST_URL__";
+    </script>
   </head>
   <body>
     <div id="root"></div>

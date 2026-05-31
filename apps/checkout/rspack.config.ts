@@ -1,10 +1,11 @@
 import { defineConfig } from "@rspack/cli";
 import { rspack } from "@rspack/core";
+import { dynamicRemote } from "@mfe/rspack-shared";
 
 export default defineConfig({
   entry: "./src/index.tsx",
   output: {
-    publicPath: "http://localhost:3003/",
+    publicPath: "auto",
     uniqueName: "checkout",
   },
   devServer: {
@@ -40,15 +41,18 @@ export default defineConfig({
     new rspack.container.ModuleFederationPlugin({
       name: "checkout",
       filename: "remoteEntry.js",
+      remotes: {
+        cart: dynamicRemote("cart"),
+      },
       exposes: {
         "./CheckoutApp": "./src/App.tsx",
+        "./checkoutApi": "./src/checkoutApi.ts",
       },
       shared: {
         react: { singleton: true, eager: false },
         "react-dom": { singleton: true, eager: false },
         "react-router-dom": { singleton: true, eager: false },
         "@mfe/event-bus": { singleton: true, eager: false, requiredVersion: false },
-        "@mfe/cart-api": { singleton: true, eager: false, requiredVersion: false },
         "@mfe/user-api": { singleton: true, eager: false, requiredVersion: false },
         zustand: { singleton: true, eager: false },
       },

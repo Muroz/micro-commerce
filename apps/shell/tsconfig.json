@@ -2,11 +2,8 @@
   "extends": "@mfe/tsconfig/react-app.json",
   "compilerOptions": {
     "paths": {
-      "@mfe/event-bus": ["../../packages/event-bus/src"],
-      "@mfe/cart-api": ["../../packages/cart-api/src"],
-      "@mfe/user-api": ["../../packages/user-api/src"]
+      "@mfe/event-bus": ["../../packages/event-bus/src"]
     }
   },
-  "include": ["src"],
-  "files": ["src/declarations.d.ts"]
+  "include": ["src", "../../packages/remotes-types/index.d.ts"]
 }

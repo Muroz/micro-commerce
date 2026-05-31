@@ -13,6 +13,16 @@
     "lint": {
       "dependsOn": ["^build"]
     },
+    "check-contracts": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "src/**/*.{ts,tsx}",
+        "tsconfig.json",
+        "../../packages/*-api/src/**/*.ts",
+        "../../packages/*-api/dist/**/*.d.ts",
+        "../../packages/remotes-types/index.d.ts"
+      ]
+    },
     "clean": {
       "cache": false
     }

@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "rspack serve",
     "build": "rspack build",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "check-contracts": "tsc --noEmit"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -18,6 +19,8 @@
   "devDependencies": {
     "@rspack/cli": "^1.7.0",
     "@rspack/core": "^1.7.0",
+    "@mfe/remotes-types": "workspace:*",
+    "@mfe/rspack-shared": "workspace:*",
     "@mfe/tsconfig": "workspace:*",
     "typescript": "^5.7.0",
     "@types/react": "^19.0.0",

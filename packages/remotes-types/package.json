@@ -1,0 +1,7 @@
+{
+  "name": "@mfe/remotes-types",
+  "private": true,
+  "version": "1.0.0",
+  "main": "./index.d.ts",
+  "types": "./index.d.ts"
+}

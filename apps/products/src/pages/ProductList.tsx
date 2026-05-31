@@ -1,4 +1,4 @@
-import { cartApi } from "@mfe/cart-api";
+import { cartApi } from "cart/cartApi";
 
 const mockProducts = [
   { id: "1", name: "Wireless Headphones", price: 79.99 },

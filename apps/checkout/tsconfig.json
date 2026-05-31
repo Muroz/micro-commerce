@@ -4,8 +4,9 @@
     "paths": {
       "@mfe/event-bus": ["../../packages/event-bus/src"],
       "@mfe/cart-api": ["../../packages/cart-api/src"],
+      "@mfe/checkout-api": ["../../packages/checkout-api/src"],
       "@mfe/user-api": ["../../packages/user-api/src"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "../../packages/remotes-types/index.d.ts"]
 }

@@ -6,6 +6,7 @@
     "dev": "turbo dev",
     "build": "turbo build",
     "lint": "turbo lint",
+    "check-contracts": "turbo check-contracts",
     "clean": "turbo clean"
   },
   "devDependencies": {
